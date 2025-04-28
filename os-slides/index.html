@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Operating System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/white.min.css">
+    <link rel="stylesheet" href="presentation.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section data-markdown="slides/01-introduction.md" data-separator="^\n---\n$" data-separator-vertical="^\n--\n$"></section>
+            <section data-markdown="slides/02-processes.md" data-markdown="slides/02-processes.md" data-separator="^\n---\n$" data-separator-vertical="^\n--\n$"></section>
+            <section data-markdown="slides/03-memory-management.md" data-separator="^\n---\n$" data-separator-vertical="^\n--\n$"></section>
+            <section data-markdown="slides/04-file-systems.md" data-separator="^\n---\n$" data-separator-vertical="^\n--\n$"></section>
+            <section data-markdown="slides/05-conclusion.md" data-separator="^\n---\n$" data-separator-vertical="^\n--\n$"></section>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            plugins: [ RevealMarkdown ]
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/markdown/markdown.min.js"></script>
+</body>
+</html>
