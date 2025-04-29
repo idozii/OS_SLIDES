@@ -1,0 +1,19 @@
+title: Simple Operating System
+description: Implementation of a basic OS with Scheduling & Memory Management
+baseurl: "/os-slides" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Theme settings
+theme: minima
+reveal_theme: night # Options: black, white, league, beige, sky, night, serif, simple, solarized
+
+# Reveal.js settings
+reveal_transition: slide # Options: none, fade, slide, convex, concave, zoom
+reveal_plugins:
+  - markdown
+  - highlight
+  - notes
