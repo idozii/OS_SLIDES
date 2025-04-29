@@ -1,3 +1,4 @@
+# Site settings
 title: Simple Operating System
 description: Implementation of a basic OS with Scheduling & Memory Management
 baseurl: "/os-slides" # the subpath of your site, e.g. /blog
@@ -16,4 +17,9 @@ reveal_transition: slide # Options: none, fade, slide, convex, concave, zoom
 reveal_plugins:
   - markdown
   - highlight
+  - zoom
   - notes
+
+# Custom settings
+author: "GROUP CC10 - Team 3"
+repo_url: "https://github.com/darealDanh/os"

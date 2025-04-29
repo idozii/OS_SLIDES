@@ -1,62 +1,44 @@
 # Memory Management
 
-Virtual memory implementation with paging
+---
+
+## Architecture Overview
+
+- **Virtual Memory Abstraction**: Processes see contiguous memory space
+- **Page-based Organization**: Fixed-size pages mapped to physical frames
+- **Demand Paging**: Pages loaded only when accessed
+- **Page Replacement**: FIFO algorithm for victim selection
 
 ---
 
-## Overview
+## Key Components
 
-- Physical Memory consists of frames (RAM and SWAP)
-- Virtual Memory organized into pages
-- Address mapping translates between virtual and physical addresses
+- **Page Tables**: Per-process mapping from virtual to physical addresses
+- **Page Fault Handler**: Manages missing pages and initiates swapping
+- **Swap Space Management**: Tracks available swap frames
+- **Frame Allocation**: Bitmap-based tracking of physical memory
 
 ---
 
-## Memory Operations
+## How Swapping Works
 
-### Reading
-
-The read_mem function handles memory reads:
-
-```c
-int read_mem(addr_t address, struct pcb_t * proc, BYTE * data) {
-  addr_t physical_addr;
-  if (translate(address, &physical_addr, proc)) {
-    *data = _ram[physical_addr];
-    return 0;
-  } else {
-    return 1;
-  }
-}
+```markdown
+┌────────────────┐      ┌────────────────┐      ┌────────────────┐
+│   Page Fault   │      │  Victim Page   │      │ Get Swap Frame │
+│   Detection    │─────▶│   Selection    │─────▶│                │
+└────────────────┘      └────────────────┘      └────────┬───────┘
+                                                         │
+                                                         ▼
+┌────────────────┐      ┌────────────────┐      ┌────────────────┐
+│   FIFO Queue   │      │   Page Table   │      │  Data Transfer │
+│   Management   │◀─────│    Updates     │◀─────│                │
+└────────────────┘      └────────────────┘      └────────────────┘
 ```
 
 ---
 
-### Writing
+## Edge Case Handling
 
-The write_mem function handles memory writes:
-
-```c
-int write_mem(addr_t address, struct pcb_t * proc, BYTE data) {
-  addr_t physical_addr;
-  if (translate(address, &physical_addr, proc)) {
-    _ram[physical_addr] = data;
-    return 0;
-  } else {
-    return 1;
-  }
-}
-```
-
----
-
-### Others
-
-libread: Reads data from a memory region
-libwrite: Writes data to a memory region,
-liballoc: Allocates memory for a process
-libfree: Frees memory allocated to a process
-
----
-
-## Calculating Frame Number
+- **Swap Space Unavailability**: Direct frame reuse without swapping
+- **Multiple Process Competition**: Fair allocation via FIFO queue
+- **Memory Pressure**: Graceful degradation under high memory demand

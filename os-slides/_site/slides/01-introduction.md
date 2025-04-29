@@ -4,7 +4,7 @@ GROUP CC10 - Team 3
 
 ---
 
-## Project Overview
+## Summary
 
 - **Scheduler**
 - **Memory Management**
