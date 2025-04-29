@@ -1,35 +1,12 @@
 # Scheduler
 
-Core component for process management and execution
-
 ---
 
 ## Scheduler Design
 
-### MLQ with Round-Robin
-
-- Organized in multiple ready queues by priority
-- Round-robin scheduling within each priority level
-- Lower numerical values = Higher priority scheduled first
-- Critical operations receive CPU time before less important ones
-
----
-
-### Time Slot Allocation
-
-- Each priority level receives dedicated time slots
-- Allocation formula: `slot[i]=MAX_PRIO-i`
-- Higher priority processes (lower i) receive more consecutive time slots
-- Prevents starvation while maintaining priority
-
----
-
-### Dual Priority Mechanism
-
-- Process default priority defined in description file
-- Can be overwritten by configuration in input file
-- Input configuration priority takes precedence when both exist
-- Provides flexibility without modifying process files
+- **MLQ Scheduling and Round Robin**
+- **Dual Priority Mechanism**
+- **Multiple CPU support**
 
 ---
 
