@@ -25,7 +25,7 @@
 
 ### sched_0 input
 
-```markdown
+<pre style="text-align: center; font-family: monospace; line-height: 1.2; background-color: transparent; border: none; box-shadow: none; margin: 0 auto; display: block; width: auto;">
 | Parameter           | Value | Description                            |
 | ------------------- | ----- | -------------------------------------- |
 | Time slice          | 2     | Each process executes for 2 time units |
@@ -37,13 +37,13 @@
 | **Start Time**      | **Name** | **Priority** | **Notes**                     |
 | 0                   | s0       | 4            | Lowest priority, starts first |
 | 4                   | s1       | 0            | High priority, arrives second |
-```
+</pre>
 
 ---
 
 #### Gantt chart
 
-```markdown
+<pre style="text-align: center; font-family: monospace; line-height: 1.2; background-color: transparent; border: none; box-shadow: none; margin: 0 auto; display: block; width: auto;">
 Time: | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |10 |11 |12 |13 |14 |15 |16 |17 |18 |19 |20 |21 |22 |23 |
 --------+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
 CPU 0 |   |s0 |s0 |s0 |   |s1 |s1 |s1 |s1 |s1 |s1 |s1 |s0 |s0 |s0 |s0 |s0 |s0 |s0 |s0 |s0 |s0 |s0 |s0 |
@@ -51,4 +51,4 @@ CPU 0 |   |s0 |s0 |s0 |   |s1 |s1 |s1 |s1 |s1 |s1 |s1 |s0 |s0 |s0 |s0 |s0 |s0 |s
 ⌞────────⌟ ⌞─────────────────⌟ ⌞───────────────────────────────────⌟
 s0 starts  s1 runs (higher    s0 completes execution
           priority)
-```
+</pre>

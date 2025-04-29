@@ -22,7 +22,7 @@
 
 ## How Swapping Works
 
-```markdown
+<pre style="text-align: center; font-family: monospace; line-height: 1.2; background-color: transparent; border: none; box-shadow: none; margin: 0 auto; display: block; width: auto;">
 ┌────────────────┐      ┌────────────────┐      ┌────────────────┐
 │   Page Fault   │      │  Victim Page   │      │ Get Swap Frame │
 │   Detection    │─────▶│   Selection    │─────▶│                │
@@ -33,7 +33,7 @@
 │   FIFO Queue   │      │   Page Table   │      │  Data Transfer │
 │   Management   │◀─────│    Updates     │◀─────│                │
 └────────────────┘      └────────────────┘      └────────────────┘
-```
+</pre>
 
 ---
 

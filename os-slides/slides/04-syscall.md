@@ -12,12 +12,12 @@
 
 ## Process Termination Workflow
 
-```markdown
+<pre style="text-align: center; font-family: monospace; line-height: 1.2; background-color: transparent; border: none; box-shadow: none; margin: 0 auto; display: block; width: auto;">
 ┌───────────┐      ┌───────────┐      ┌───────────┐      ┌───────────┐
 │ Read proc │      │ Search    │      │ Remove    │      │ Return    │
 │ name      │─────▶│ queues    │─────▶│ matching  │─────▶│ count     │
 └───────────┘      └───────────┘      └───────────┘      └───────────┘
-```
+</pre>
 
 ---
 
