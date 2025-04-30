@@ -1,4 +1,4 @@
-# Synchronization and Concurrency
+# Synchronization
 
 ---
 
