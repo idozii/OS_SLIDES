@@ -1,0 +1,32 @@
+name: GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+      
+      # If you're using a static site generator like Jekyll
+      # Uncomment these lines:
+      # - name: Setup Ruby
+      #   uses: ruby/setup-ruby@v1
+      #   with:
+      #     ruby-version: '3.0'
+      #     bundler-cache: true
+      # - name: Build site
+      #   run: |
+      #     cd os-slides
+      #     bundle install
+      #     bundle exec jekyll build
+          
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: os-slides/_site  # Adjust if your build output is elsewhere
